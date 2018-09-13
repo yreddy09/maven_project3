@@ -34,6 +34,7 @@ http://www.mulesoft.org/schema/mule/jms http://www.mulesoft.org/schema/mule/jms/
 		</db:select>
 
 		<json:object-to-json-transformer doc:name="Object to JSON" />
+        <set-property propertyName="#['Content-Type']" value="#['application/json']" doc:name="Property"/>
 
 		<jms:outbound-endpoint connector-ref="Active_MQ" doc:name="JMS" queue="flights" />
 	</flow>
